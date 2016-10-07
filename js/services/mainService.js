@@ -25,4 +25,17 @@ angular.module('devmtnTravel').service('mainSrv', function(){
 
 
     }]
-})
+
+  this.getTrip = function(id) {
+    var matchingTrip
+
+    this.travelInfo.forEach(function(trip){
+
+        if (Number(id) === trip.id) {
+            matchingTrip = trip
+        }
+    })
+    return matchingTrip;
+  }
+
+});
